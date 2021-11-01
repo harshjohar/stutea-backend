@@ -10,7 +10,10 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use('/api/auth', require('./routes/auth'));
+app.use('/api/auth', require('./routes/auth'), (req,res)=>
+{
+    res.send('Frontend Not ready Yet');
+});
 
 app.get("/", (req, res)=> {
     res.send("hello world!, stutea here!");
