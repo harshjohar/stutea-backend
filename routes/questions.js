@@ -31,7 +31,7 @@ router.post('/add', fetchuser, [
 });
 
 // ROUTE 2 : Fetch questions : GET "/api/questions/fetch". Login Required
-router.post("/fetch", fetchuser, async(req, res)=> {
+router.get("/fetch", fetchuser, async(req, res)=> {
     try {
 
         const {page} = req.body;
@@ -53,7 +53,7 @@ router.post("/fetch", fetchuser, async(req, res)=> {
 })
 
 // ROUTE 3 : Fetch user's own questions GET "/api/questions/fetchuser". Login Required
-router.post("/fetchuser", fetchuser, async(req, res)=> {
+router.get("/fetchuser", fetchuser, async(req, res)=> {
     try {
         const {page}=req.body;
         const user=req.user.id;
